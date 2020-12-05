@@ -14,11 +14,13 @@ enum class Cell
 
 class Wall
 {
-	const int height;
-	const int width;
+	int height;
+	int width;
 	vector<vector<Cell>> structure;
 
 public:
+	Wall(): height{0}, width{0}{}
+	
 	Wall(const int _height, const int _width, const vector<string>& _wall): height{_height}, width{_width}
 	{
 		vector<Cell> row{};
