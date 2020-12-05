@@ -1,7 +1,6 @@
 #pragma once
 
 
-
 class Chunk
 {
 	int height = 0;
