@@ -6,7 +6,7 @@ using std::endl;
 
 void main()
 {
-	Constructor constructor("data/true.txt");
+	Constructor constructor{"data/true.txt"};
 
 	
 

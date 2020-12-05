@@ -3,7 +3,6 @@
 #include "File.h"
 #include "Wall.h"
 
-
 class Constructor
 {
 	File file;
@@ -11,7 +10,19 @@ class Constructor
 	vector<Chunk> chunks;
 
 public:
-	Constructor(const string& _filePath);
+	Constructor(const string& _filePath): file{_filePath}
+	{
+		string wallDimensions{file.getLines()[0]};
+		
+		for (auto element : wallDimensions)
+		{
+			std::cout << element << "\n";	
+		}
+
+	}
+
+
 	
+	auto getChunks() const { return chunks; }	
 };
 

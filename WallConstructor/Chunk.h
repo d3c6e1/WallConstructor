@@ -1,14 +1,13 @@
 #pragma once
 
-
 class Chunk
 {
-	int height = 0;
-	int width = 0;
-	int bricksCount = 0;
+	const int height;
+	const int width;
+	const int bricksCount;
 
 public:
-	Chunk(int _height, int _width);
+	Chunk(const int _height, const int _width): height{_height}, width{_width}, bricksCount{_height * _width}{}
 
 	int getBricksCount() const { return bricksCount; }
 	int getHeight() const {return height;}
