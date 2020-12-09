@@ -19,7 +19,7 @@ class Wall
 	vector<vector<Cell>> structure;
 
 public:
-	Wall(): height{0}, width{0}{}
+	Wall(): height{}, width{}{}
 	
 	Wall(const int _height, const int _width, const vector<string>& _wall): height{_height}, width{_width}
 	{
@@ -27,9 +27,10 @@ public:
 		
 		for (const auto& _row : _wall)
 		{
-			for (auto _cell : _row)
+			for (char _cell : _row)
 			{
-				row.push_back(static_cast<Cell>(_cell));
+				// row.push_back(static_cast<Cell>(atoi(&_cell)));
+				row.push_back(static_cast<Cell>(stoi(string(1, _cell))));
 			}
 			
 			structure.push_back(row);

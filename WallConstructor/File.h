@@ -12,7 +12,6 @@ class File
 	std::ifstream file;
 	std::vector<string> lines;
 
-
 public:
 	File(const string& _path): path{_path}, file{_path}
 	{
@@ -24,13 +23,19 @@ public:
 
 		while (file)
 		{
-			string fLine{};
+			string fLine;
 			std::getline(file, fLine);
 			lines.push_back(fLine);
 		}
-		
+
+		file.close();		
 	}
 
+	void reopenFile()
+	{
+		file.open(path);
+	}
+	
 	string getPath() const {return path;}
 	auto getLines() const  {return lines;}
 };
